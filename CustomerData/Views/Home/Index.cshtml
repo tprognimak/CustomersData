@@ -1,0 +1,39 @@
+﻿
+@model List<CustomerData.Model.Data>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<ol class="breadcrumb">
+    <li><a href="/Home/Index">Home</a></li>
+</ol>
+
+<table class="table-responsive table-bordered">
+    <tr>
+        <th><p>Name</p></th>
+        <th><p>Company</p></th>
+        <th><p>Email</p></th>
+        <th><p>Phone</p></th>
+        <th><p>Tags</p></th>
+    </tr>
+    @foreach (var d in Model)
+            {
+        <tr>
+            <td>
+                <p>
+                    @Html.ActionLink(d.Name, "Detail", "Home", new { guid = d.Guid }, null)
+                </p>
+            </td>
+            <td><p>@d.Company</p></td>
+            <td><p>@d.Email</p></td>
+            <td><p>@d.Phone</p></td>
+            <td>
+                @foreach (var t in d.Tags)
+                {
+                    <p><a href="\Home\TagFilter\@t">@t</a></p>
+                }
+            </td>
+        </tr>
+    }
+</table>

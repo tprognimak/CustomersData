@@ -1,0 +1,33 @@
+﻿@model CustomerData.Model.Data
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb">
+    <li><a href="/Home/Index">Home</a></li>
+    <li><a href="#">Details</a></li>
+</ol>
+
+
+<div class="row">
+    <h2>@ViewBag.Login</h2>
+</div>
+<div class="row">
+    <div class="img-rounded col-sm-2">
+        <img src=@Model.Picture />
+    </div>
+    <div class="col-sm-10">
+        <h3>@Model.Name , @Model.Gender</h3>
+        <h4>@Model.Company</h4>
+        <p>@Model.Email</p>
+        <p>@Model.Phone</p>
+        <p>@Model.Address</p>
+        <p>Registred: @Model.Registered</p>
+    </div>
+</div>
+<div class="row">
+    <p>@Model.About</p>
+</div>
+
+
